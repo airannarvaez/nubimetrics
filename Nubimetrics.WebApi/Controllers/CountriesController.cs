@@ -1,8 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Nubimetrics.Common;
 using Nubimetrics.Common.Enums;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Nubimetrics.WebApi.Controllers
 {
