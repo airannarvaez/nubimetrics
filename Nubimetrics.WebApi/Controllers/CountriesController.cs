@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Nubimetrics.Common;
 
 namespace Nubimetrics.WebApi.Controllers
 {
