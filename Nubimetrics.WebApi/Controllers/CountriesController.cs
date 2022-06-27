@@ -1,23 +1,41 @@
 using Microsoft.AspNetCore.Mvc;
 using Nubimetrics.Common;
+using Nubimetrics.Common.Enums;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Nubimetrics.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("paises")]
     public class CountriesController : ControllerBase
     {
         private readonly ILogger<CountriesController> _logger;
+        private readonly ApiClientFactory _apiClient;
 
-        public CountriesController(ILogger<CountriesController> logger)
+        public CountriesController(ILogger<CountriesController> logger, ApiClientFactory apiClient)
         {
             _logger = logger;
+            _apiClient = apiClient;
         }
 
-        [HttpGet]
-        public Country Get()
+        [HttpGet("{countryCode}")]
+        public async Task<IActionResult> Get(string countryCode)
         {
-            return new Country();
+            if (Enum.TryParse(countryCode, out CountryCode code))
+            {
+                if (code == CountryCode.AR)
+                {
+                    var api = _apiClient.Instance();
+                    return Ok(await api.GetCountry(countryCode));
+                }
+                else
+                {
+                    return Unauthorized();
+                }
+            }
+            return BadRequest();
+
         }
     }
 }

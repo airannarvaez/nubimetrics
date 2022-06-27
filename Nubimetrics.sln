@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubimetrics.WebApi", "Nubimetrics.WebApi\Nubimetrics.WebApi.csproj", "{5F3203F4-B199-47CC-908C-12A5A115804E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nubimetrics.WebApi", "Nubimetrics.WebApi\Nubimetrics.WebApi.csproj", "{5F3203F4-B199-47CC-908C-12A5A115804E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubimetrics.Common", "Nubimetrics.Common\Nubimetrics.Common.csproj", "{CE28DA92-485F-41F4-AE0F-1E82B3F5D797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nubimetrics.Common", "Nubimetrics.Common\Nubimetrics.Common.csproj", "{CE28DA92-485F-41F4-AE0F-1E82B3F5D797}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nubimetrics.ApiClientLibrary", "Nubimetrics.ApiClient\Nubimetrics.ApiClientLibrary.csproj", "{80D6E83E-B3DD-4156-B4A9-16A33D362978}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CE28DA92-485F-41F4-AE0F-1E82B3F5D797}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE28DA92-485F-41F4-AE0F-1E82B3F5D797}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE28DA92-485F-41F4-AE0F-1E82B3F5D797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D6E83E-B3DD-4156-B4A9-16A33D362978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D6E83E-B3DD-4156-B4A9-16A33D362978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D6E83E-B3DD-4156-B4A9-16A33D362978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D6E83E-B3DD-4156-B4A9-16A33D362978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

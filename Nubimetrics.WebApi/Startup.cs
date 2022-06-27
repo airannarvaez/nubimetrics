@@ -14,6 +14,8 @@ namespace Nubimetrics.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            string baseUrl = Configuration["baseUrl"];
+            services.AddTransient(p => new ApiClientFactory(new Uri(baseUrl)));
         }
 
         public void Configure(IApplicationBuilder app)
