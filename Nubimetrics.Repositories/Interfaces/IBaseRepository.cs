@@ -1,7 +1,6 @@
-﻿
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
-namespace Nubimetrics.Repositories
+namespace Nubimetrics.Repositories.Interfaces
 {
     public interface IBaseRepository<T> where T : class
     {

@@ -6,10 +6,10 @@ namespace Nubimetrics.WebApi.Controllers
     [ApiController]
     public class SearchController : ControllerBase
     {
-        private readonly ILogger<CountriesController> _logger;
+        private readonly ILogger<SearchController> _logger;
         private readonly ApiClientFactory _apiClient;
 
-        public SearchController(ILogger<CountriesController> logger, ApiClientFactory apiClient)
+        public SearchController(ILogger<SearchController> logger, ApiClientFactory apiClient)
         {
             _logger = logger;
             _apiClient = apiClient;

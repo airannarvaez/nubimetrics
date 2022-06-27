@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Nubimetrics.Repositories;
+using Nubimetrics.Repositories.Implementations;
+using Nubimetrics.Repositories.Interfaces;
 
 namespace Nubimetrics.WebApi
 {
@@ -24,6 +26,10 @@ namespace Nubimetrics.WebApi
                 var connectionString = Configuration.GetConnectionString("DefaultConnection");
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             });
+
+            services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 
         public void Configure(IApplicationBuilder app)
