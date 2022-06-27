@@ -32,7 +32,6 @@ namespace Nubimetrics.WebApi.Controllers
                 }
             }
             return BadRequest();
-
         }
     }
 }

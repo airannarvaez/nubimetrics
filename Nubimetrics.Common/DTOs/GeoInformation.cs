@@ -1,7 +1,6 @@
-﻿
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace Nubimetrics.Common
+namespace Nubimetrics.Common.DTOs
 {
     public class GeoInformation
     {
@@ -13,7 +12,7 @@ namespace Nubimetrics.Common
     {
         [JsonPropertyName("latitude")]
         public double Latitude { get; set; }
-        
+
         [JsonPropertyName("longitude")]
         public double Longitude { get; set; }
 

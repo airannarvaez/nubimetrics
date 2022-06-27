@@ -1,5 +1,5 @@
-﻿using Nubimetrics.Common;
-using System.Text.Json;
+﻿using System.Text.Json;
+using System.Web;
 
 namespace Nubimetrics.ApiClientLibrary
 {
@@ -40,38 +40,18 @@ namespace Nubimetrics.ApiClientLibrary
             }
         }
 
-        /// <summary>
-        /// Common method for making POST calls
-        /// </summary>
-        private async Task<T> PostAsync<T>(Uri requestUrl, T content)
-        {
-            throw new NotImplementedException();
-        }
-
-        private async Task<T1> PostAsync<T1, T2>(Uri requestUrl, T2 content)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Common method for making PUT calls
-        /// </summary>
-        private async Task<T> PutAsync<T>(Uri requestUrl, T content)
-        {
-            throw new NotImplementedException();
-        }
-
-        private async Task<T1> PutAsync<T1, T2>(Uri requestUrl, T2 content)
-        {
-            throw new NotImplementedException();
-        }
-
         private Uri CreateRequestUri(string relativePath, string queryString = "")
         {
             var endpoint = new Uri(BaseEndpoint, relativePath);
             var uriBuilder = new UriBuilder(endpoint);
-            uriBuilder.Query = !string.IsNullOrEmpty(queryString) ? queryString : uriBuilder.Query;
 
+            if (!string.IsNullOrEmpty(queryString))
+            {
+                var httpValueCollection = HttpUtility.ParseQueryString(uriBuilder.Query);
+                httpValueCollection.Add("q", queryString);
+
+                uriBuilder.Query = httpValueCollection.ToString();
+            }
             return uriBuilder.Uri;
         }
 

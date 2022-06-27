@@ -1,4 +1,4 @@
-﻿using Nubimetrics.Common;
+﻿using Nubimetrics.Common.DTOs;
 
 namespace Nubimetrics.ApiClientLibrary
 {
