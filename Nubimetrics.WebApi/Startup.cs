@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Nubimetrics.Repositories;
 
 namespace Nubimetrics.WebApi
 {
@@ -16,6 +18,12 @@ namespace Nubimetrics.WebApi
             services.AddControllers();
             string baseUrl = Configuration["baseUrl"];
             services.AddTransient(p => new ApiClientFactory(new Uri(baseUrl)));
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<NubimetricsContext>(options =>
+            {
+                var connectionString = Configuration.GetConnectionString("DefaultConnection");
+                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+            });
         }
 
         public void Configure(IApplicationBuilder app)
