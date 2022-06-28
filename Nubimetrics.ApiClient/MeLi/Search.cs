@@ -6,7 +6,11 @@ namespace Nubimetrics.ApiClientLibrary
     {
         public async Task<SearchResults> SearchText(string text)
         {
-            var requestUrl = CreateRequestUri($"sites/MLA/search", text);
+            Dictionary<string, string> queryParams = new()
+            {
+                { "q", text }
+            };
+            var requestUrl = CreateRequestUri($"sites/MLA/search", queryParams);
             return await GetAsync<SearchResults>(requestUrl);
         }
     }

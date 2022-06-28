@@ -12,7 +12,7 @@
     "Nubimetrics.WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "MyRestfulApp/countries",
+      "launchUrl": "MyRestfulApp/paises/AR",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -22,7 +22,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "MyRestfulApp/paises/AR",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

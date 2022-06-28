@@ -1,0 +1,23 @@
+Id,Symbol,Description,DecimalPlaces,ToDolar
+ARS,$,Peso argentino,2,0.00805802
+BOB,Bs,Boliviano,2,0.14367816
+BRL,R$,Real,2,0.19292729
+CLF,UF,Unidad de Fomento,2,37.27261376
+CLP,$,Peso Chileno,0,0.00112785
+COP,$,Peso colombiano,0,0.00024835
+CRC,₡,Colones,2,0.00143176
+CUC,CUC,Peso Cubano Convertible,2,0.00083333
+CUP,$,Peso Cubano,2,0.04
+DOP,$,Peso Dominicano,2,0.01826434
+EUR,€,Euro,2,1.04931794
+GTQ,Q,Quetzal Guatemalteco,2,0.13048868
+HNL,L,Lempira,0,0.04099587
+MXN,$,Peso Mexicano,2,0.04990892
+NIO,C$,Córdoba,0,0.02788786
+PAB,B/.,Balboa,2,1
+PEN,S/,Soles,2,0.26816841
+PYG,₲,Guaraní,0,0.00014533
+USD,U$S,Dólar,2,1
+UYU,$,Peso Uruguayo,2,0.02475248
+VEF,Bs.,Bolivar fuerte,2,not allowed
+VES,Bs.,Bolivar Soberano,2,not allowed

@@ -40,15 +40,19 @@ namespace Nubimetrics.ApiClientLibrary
             }
         }
 
-        private Uri CreateRequestUri(string relativePath, string queryString = "")
+        private Uri CreateRequestUri(string relativePath, Dictionary<string, string>? queryParams = null)
         {
             var endpoint = new Uri(BaseEndpoint, relativePath);
             var uriBuilder = new UriBuilder(endpoint);
 
-            if (!string.IsNullOrEmpty(queryString))
+            if (queryParams != null)
             {
                 var httpValueCollection = HttpUtility.ParseQueryString(uriBuilder.Query);
-                httpValueCollection.Add("q", queryString);
+
+                foreach (KeyValuePair<string, string> queryParam in queryParams)
+                {
+                    httpValueCollection.Add(queryParam.Key, queryParam.Value);
+                }
 
                 uriBuilder.Query = httpValueCollection.ToString();
             }
